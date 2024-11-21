@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Manali extends StatelessWidget {
+  const Manali({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -8,7 +10,7 @@ class Manali extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
           onPressed: () {
             Navigator.of(context).pop();
           },
@@ -30,7 +32,7 @@ class Manali extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Title and Price
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
@@ -78,9 +80,9 @@ class Manali extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   // Description
-                  Text(
+                  const Text(
                     'Manali is a high-altitude Himalayan resort town in India\'s northern state of Himachal Pradesh. '
                     'It\'s known for its stunning landscapes, adventure sports, and picturesque valleys. '
                     'The region offers a variety of outdoor activities, including trekking, skiing, and paragliding.',
@@ -89,19 +91,19 @@ class Manali extends StatelessWidget {
                       color: Colors.black54,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   // Book Now Button
                   Center(
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.teal,
-                        padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0),
                         ),
                       ),
-                      child: Text(
+                      child: const Text(
                         'Book Now',
                         style: TextStyle(
                           fontSize: 18,
@@ -119,7 +121,7 @@ class Manali extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.teal,
         unselectedItemColor: Colors.grey,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

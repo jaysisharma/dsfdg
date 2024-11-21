@@ -5,6 +5,8 @@ import 'package:tourpulse/forgot_password.dart'; // Import your Forgot Password 
 class Verification extends StatelessWidget {
   final TextEditingController _codeController = TextEditingController();
 
+  Verification({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +15,7 @@ class Verification extends StatelessWidget {
           // Background image container filling 60% of the screen
           Container(
             height: MediaQuery.of(context).size.height * 0.6, // Set to 60% height
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/abc.jpg'), // Your image asset
                 fit: BoxFit.cover, // Ensure image covers the area
@@ -28,7 +30,7 @@ class Verification extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 IconButton(
-                  icon: Icon(Icons.arrow_back),
+                  icon: const Icon(Icons.arrow_back),
                   color: Colors.black,
                   onPressed: () {
                     // Navigate back to Forgot Password page
@@ -38,8 +40,8 @@ class Verification extends StatelessWidget {
                     );
                   },
                 ),
-                SizedBox(width: 5),
-                Text(
+                const SizedBox(width: 5),
+                const Text(
                   'TourPulse',
                   style: TextStyle(
                     fontSize: 18,
@@ -58,7 +60,7 @@ class Verification extends StatelessWidget {
               width: MediaQuery.of(context).size.width, // Full width
               decoration: BoxDecoration(
                 color: Colors.blueGrey[400], // Background color for the bottom part
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(60),
                   topRight: Radius.circular(60),
                 ),
@@ -67,7 +69,7 @@ class Verification extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   // Verification Code Text
-                  Text(
+                  const Text(
                     'Verification Code',
                     style: TextStyle(
                       fontSize: 24,
@@ -75,7 +77,7 @@ class Verification extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   // Code Input Box
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 40.0),
@@ -83,9 +85,9 @@ class Verification extends StatelessWidget {
                       controller: _codeController,
                       decoration: InputDecoration(
                         labelText: 'Enter the verification code',
-                        labelStyle: TextStyle(color: Colors.white),
+                        labelStyle: const TextStyle(color: Colors.white),
                         filled: true,
-                        fillColor: Color.fromARGB(141, 211, 205, 205),
+                        fillColor: const Color.fromARGB(141, 211, 205, 205),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
                           borderSide: BorderSide.none,
@@ -93,7 +95,7 @@ class Verification extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   // Verify Button
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 40.0),
@@ -108,17 +110,17 @@ class Verification extends StatelessWidget {
                           // Navigate to Home page
                           Navigator.pushReplacement(
                             context,
-                            MaterialPageRoute(builder: (context) => Home()),
+                            MaterialPageRoute(builder: (context) => const Home()),
                           );
                         },
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 15), // Maintain height
+                          padding: const EdgeInsets.symmetric(vertical: 15), // Maintain height
                           backgroundColor: Colors.teal, // Change background color of the button
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'Verify',
                             style: TextStyle(
@@ -131,7 +133,7 @@ class Verification extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   // Resend Code Text
                   Padding(
                     padding: const EdgeInsets.only(right: 40.0),

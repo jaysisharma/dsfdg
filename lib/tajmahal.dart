@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TajMahal extends StatelessWidget {
+  const TajMahal({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -8,7 +10,7 @@ class TajMahal extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
           onPressed: () {
             Navigator.of(context).pop();
           },
@@ -30,7 +32,7 @@ class TajMahal extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Title and Price
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
@@ -57,7 +59,7 @@ class TajMahal extends StatelessWidget {
                         children: [
                           // Underlined ₹5000
                           Text(
-                            '₹5000',
+                            'More',
                             style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
@@ -68,7 +70,7 @@ class TajMahal extends StatelessWidget {
                           SizedBox(height: 4), // Spacing between ₹5000 and per person
                           // Per person text
                           Text(
-                            'per person',
+                            'Places',
                             style: TextStyle(
                               fontSize: 16,
                               color: Colors.black54,
@@ -78,9 +80,9 @@ class TajMahal extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   // Description
-                  Text(
+                  const Text(
                     'The Taj Mahal is set within expansive gardens and is perfectly symmetrical, '
                     'with a large central dome surrounded by four minarets. The beauty of the monument '
                     'changes throughout the day, with the white marble reflecting different hues as '
@@ -90,20 +92,20 @@ class TajMahal extends StatelessWidget {
                       color: Colors.black54,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   // Book Now Button
                   Center(
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.teal,
-                        padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0),
                         ),
                       ),
-                      child: Text(
-                        'Book Now',
+                      child: const Text(
+                        'KNOW MORE',
                         style: TextStyle(
                           fontSize: 18,
                           color: Colors.white,
@@ -120,7 +122,7 @@ class TajMahal extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.teal,
         unselectedItemColor: Colors.grey,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

@@ -2,30 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:tourpulse/ThirdPage.dart'; // Import ThirdPage
 
 class SecondPage extends StatelessWidget {
+  const SecondPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          // Background Image
           Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/abc.jpg'), // Your background image path
                 fit: BoxFit.cover, // Ensures the image covers the entire background
               ),
             ),
           ),
-          // Main content (Text and Buttons)
           Positioned.fill(
             child: Column(
               children: [
-                Align(
-                  alignment: Alignment.topLeft, // Aligning to the top left corner
+                const Align(
+                  alignment: Alignment.topLeft, 
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 20.0, top: 40.0), // Adding left and top padding
+                    padding: EdgeInsets.only(left: 20.0, top: 40.0), 
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -34,7 +34,7 @@ class SecondPage extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
-                            color: Colors.black87, // Darker text color for better visibility
+                            color: Colors.black87, 
                           ),
                         ),
                         SizedBox(height: 10),
@@ -46,32 +46,30 @@ class SecondPage extends StatelessWidget {
                           'every aspect of your journey with ease.',
                           style: TextStyle(
                             fontSize: 16,
-                            color: Colors.black87, // Darker description text color for better readability
+                            color: Colors.black87, 
                           ),
                         ),
                       ],
                     ),
                   ),
                 ),
-                Spacer(flex: 3), // Space below the text to push buttons down
+                const Spacer(flex: 3), 
 
-                // Get Started Button
                 ElevatedButton(
                   onPressed: () {
-                    // Navigate to ThirdPage on button press
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ThirdPage()),
+                      MaterialPageRoute(builder: (context) => const ThirdPage()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
                     ),
                     backgroundColor: Colors.grey[800],
                   ),
-                  child: Text(
+                  child: const Text(
                     'Get Started',
                     style: TextStyle(
                       fontSize: 18,
@@ -79,17 +77,16 @@ class SecondPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20), // Space between the button and the circles
+                const SizedBox(height: 20), // Space between the button and the circles
 
-                // Indicator dots
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
                       width: 12,
                       height: 12,
-                      margin: EdgeInsets.symmetric(horizontal: 5),
-                      decoration: BoxDecoration(
+                      margin: const EdgeInsets.symmetric(horizontal: 5),
+                      decoration: const BoxDecoration(
                         color: Colors.grey,
                         shape: BoxShape.circle,
                       ),
@@ -97,7 +94,7 @@ class SecondPage extends StatelessWidget {
                     Container(
                       width: 12,
                       height: 12,
-                      margin: EdgeInsets.symmetric(horizontal: 5),
+                      margin: const EdgeInsets.symmetric(horizontal: 5),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         shape: BoxShape.circle,
@@ -106,7 +103,7 @@ class SecondPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                Spacer(flex: 1), // Extra space at the bottom
+                const Spacer(flex: 1), 
               ],
             ),
           ),
@@ -117,7 +114,7 @@ class SecondPage extends StatelessWidget {
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: SecondPage(),
   ));

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "35361249911",
+    "project_id": "testing-cli-3f219",
+    "storage_bucket": "testing-cli-3f219.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35361249911:android:4d61e4f4d8bbc0672d0472",
+        "android_client_info": {
+          "package_name": "com.example.tourpulse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArrT03d2ReFTXg7l5NKb1WourSNpHYf7I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

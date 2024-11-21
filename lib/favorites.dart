@@ -2,23 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:tourpulse/home.dart'; // Import your Home page
 
 class Favorites extends StatelessWidget {
+  const Favorites({super.key});
+
   @override
   Widget build(BuildContext context) {
-    final Color backgroundColor = Colors.white; // Define the background color for the entire page
+    const Color backgroundColor = Colors.white; // Define the background color for the entire page
 
     return Scaffold(
       backgroundColor: backgroundColor, // Set the background color of the page
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Home()), // Navigate to Home page
+              MaterialPageRoute(builder: (context) => const Home()), // Navigate to Home page
             );
           },
         ),
-        title: Text(
+        title: const Text(
           'Favorites',
           style: TextStyle(
             fontSize: 24, // Set a large font size for the title
@@ -41,7 +43,7 @@ class Favorites extends StatelessWidget {
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey[400], // Make unselected items more subtle
         backgroundColor: backgroundColor, // Set BottomNavigationBar color to white
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
@@ -59,7 +61,7 @@ class Favorites extends StatelessWidget {
             label: 'Profile',
           ),
         ],
-        selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
       ),
     );
   }
@@ -83,7 +85,7 @@ class Favorites extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(10),
                 bottomLeft: Radius.circular(10),
               ),
@@ -102,7 +104,7 @@ class Favorites extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
@@ -120,7 +122,7 @@ class Favorites extends StatelessWidget {
               ),
             ),
             IconButton(
-              icon: Icon(Icons.bookmark, color: Colors.red),
+              icon: const Icon(Icons.bookmark, color: Colors.red),
               onPressed: () {
                 // Handle bookmark action
               },

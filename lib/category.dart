@@ -2,20 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:tourpulse/home.dart'; // Import your Home page
 
 class Category extends StatelessWidget {
+  const Category({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Home()), // Navigate to Home page
+              MaterialPageRoute(builder: (context) => const Home()), // Navigate to Home page
             );
           },
         ),
-        title: Text(
+        title: const Text(
           'Category',
           style: TextStyle(
             fontSize: 24, // Increased font size
@@ -38,13 +40,13 @@ class Category extends StatelessWidget {
                       color: Colors.grey.withOpacity(0.5), // Shadow color
                       spreadRadius: 2,
                       blurRadius: 5,
-                      offset: Offset(0, 3), // Changes position of shadow
+                      offset: const Offset(0, 3), // Changes position of shadow
                     ),
                   ],
                 ),
                 child: TextField(
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.search),
+                    prefixIcon: const Icon(Icons.search),
                     hintText: 'Search',
                     filled: true,
                     fillColor: Colors.lightBlueAccent[100], // Keep the same background color
@@ -56,11 +58,11 @@ class Category extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             _buildPopularDestinationsRow(),
-            SizedBox(height: 20), // Spacing before Explore section
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
+            const SizedBox(height: 20), // Spacing before Explore section
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -81,7 +83,7 @@ class Category extends StatelessWidget {
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.blueGrey,
         backgroundColor: Colors.grey[100], // Match with page background color
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home, size: 30), // Increased icon size
             label: 'Home',
@@ -99,7 +101,7 @@ class Category extends StatelessWidget {
             label: 'Profile',
           ),
         ],
-        selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16), // Make Home text bold and increase font size
+        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16), // Make Home text bold and increase font size
       ),
     );
   }
@@ -133,8 +135,8 @@ class Category extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          SizedBox(height: 5),
-          Text(label, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)), // Bold text for labels
+          const SizedBox(height: 5),
+          Text(label, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)), // Bold text for labels
         ],
       ),
     );
@@ -155,7 +157,7 @@ class Category extends StatelessWidget {
   }
 
   Widget _buildExploreItem(String imagePath, String label) {
-    return Container(
+    return SizedBox(
       width: 120, // Increased size for Explore items
       child: Column(
         children: [
@@ -168,8 +170,8 @@ class Category extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          SizedBox(height: 5),
-          Text(label, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)), // Bold text for Explore labels
+          const SizedBox(height: 5),
+          Text(label, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)), // Bold text for Explore labels
         ],
       ),
     );

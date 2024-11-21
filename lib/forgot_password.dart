@@ -5,6 +5,8 @@ import 'package:tourpulse/Login.dart'; // Import your Login page
 class ForgotPassword extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
 
+  ForgotPassword({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +15,7 @@ class ForgotPassword extends StatelessWidget {
           // Background image container filling 60% of the screen
           Container(
             height: MediaQuery.of(context).size.height * 0.6, // Set to 60% height
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/abc.jpg'), // Your image asset
                 fit: BoxFit.cover, // Ensure image covers the area
@@ -28,18 +30,18 @@ class ForgotPassword extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 IconButton(
-                  icon: Icon(Icons.arrow_back),
+                  icon: const Icon(Icons.arrow_back),
                   color: Colors.black,
                   onPressed: () {
                     // Navigate to the Login page
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => Login()), // Navigate to Login page
+                      MaterialPageRoute(builder: (context) => const LoginApp()), // Navigate to Login page
                     );
                   },
                 ),
-                SizedBox(width: 5),
-                Text(
+                const SizedBox(width: 5),
+                const Text(
                   'TourPulse',
                   style: TextStyle(
                     fontSize: 18,
@@ -58,7 +60,7 @@ class ForgotPassword extends StatelessWidget {
               width: MediaQuery.of(context).size.width, // Full width
               decoration: BoxDecoration(
                 color: Colors.blueGrey[400], // Background color for the bottom part
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(60),
                   topRight: Radius.circular(60),
                 ),
@@ -67,7 +69,7 @@ class ForgotPassword extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   // Forgot Password Text
-                  Text(
+                  const Text(
                     'Forgot Password?',
                     style: TextStyle(
                       fontSize: 24,
@@ -75,7 +77,7 @@ class ForgotPassword extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   // Email Input Box
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 40.0),
@@ -83,9 +85,9 @@ class ForgotPassword extends StatelessWidget {
                       controller: _emailController,
                       decoration: InputDecoration(
                         labelText: 'Email',
-                        labelStyle: TextStyle(color: Colors.white),
+                        labelStyle: const TextStyle(color: Colors.white),
                         filled: true,
-                        fillColor: Color.fromARGB(141, 211, 205, 205),
+                        fillColor: const Color.fromARGB(141, 211, 205, 205),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
                           borderSide: BorderSide.none,
@@ -93,7 +95,7 @@ class ForgotPassword extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   // Send Button
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 40.0),
@@ -112,13 +114,13 @@ class ForgotPassword extends StatelessWidget {
                           );
                         },
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 15), // Maintain height
+                          padding: const EdgeInsets.symmetric(vertical: 15), // Maintain height
                           backgroundColor: Colors.teal, // Change background color of the button
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'Send',
                             style: TextStyle(

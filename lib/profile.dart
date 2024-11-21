@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:tourpulse/home.dart'; // Import your Home page
 
 class Profile extends StatelessWidget {
+  const Profile({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Profile',
           style: TextStyle(
             fontSize: 28, // Increased font size for "Profile"
@@ -14,17 +16,17 @@ class Profile extends StatelessWidget {
           ),
         ),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Home()), // Navigate to Home page
+              MaterialPageRoute(builder: (context) => const Home()), // Navigate to Home page
             );
           },
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.edit),
+            icon: const Icon(Icons.edit),
             onPressed: () {
               // Edit profile action
             },
@@ -48,7 +50,7 @@ class Profile extends StatelessWidget {
                 color: Colors.blue[800],
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               'Name',
               style: TextStyle(
@@ -57,32 +59,32 @@ class Profile extends StatelessWidget {
                 color: Colors.blue[800],
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             _buildProfileField('Username'),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _buildProfileField('Email'),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _buildProfileField('Number'),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _buildProfileField('Address'),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {
                 // Sign out action
               },
-              child: Text(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue[800],
+                padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 20), // Increased padding for a bigger button
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+              child: const Text(
                 'Sign Out',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                   fontSize: 20, // Increased font size for "Sign Out" text
-                ),
-              ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue[800],
-                padding: EdgeInsets.symmetric(horizontal: 70, vertical: 20), // Increased padding for a bigger button
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
                 ),
               ),
             ),
@@ -93,7 +95,7 @@ class Profile extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.blueGrey,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

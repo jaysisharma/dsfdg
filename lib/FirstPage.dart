@@ -2,31 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:tourpulse/SecondPage.dart';
 
 class FirstPage extends StatelessWidget {
+  const FirstPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          // Background Image
           Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/abc.jpg'), // Your background image path
                 fit: BoxFit.cover, // Ensures the image covers the entire background
               ),
             ),
           ),
-          // Skip Button
           Positioned(
             top: 40,
             right: 20,
             child: TextButton(
               onPressed: () {
-                // Handle Skip action
+               
               },
-              child: Text(
+              child: const Text(
                 'Skip >',
                 style: TextStyle(
                   fontSize: 16,
@@ -35,12 +35,11 @@ class FirstPage extends StatelessWidget {
               ),
             ),
           ),
-          // Moving the 'Welcome to' and 'TourPulse' to top left
-          Positioned(
+          const Positioned(
             top: 40,
             left: 20,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start, // Align text to the left
+              crossAxisAlignment: CrossAxisAlignment.start, 
               children: [
                 Text(
                   'WELCOME TO',
@@ -63,32 +62,29 @@ class FirstPage extends StatelessWidget {
               ],
             ),
           ),
-          // Main content (Get Started Button and Indicator dots)
           Positioned(
-            bottom: 40, // Position the column 40 pixels from the bottom
+            bottom: 40, 
             left: 0,
             right: 0,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Get Started Button
                 ElevatedButton(
                   onPressed: () {
-                    // Navigate to SecondPage on button press
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SecondPage()),
+                      MaterialPageRoute(builder: (context) => const SecondPage()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
                     ),
                     backgroundColor: Colors.grey[800],
                   ),
-                  child: Text(
+                  child: const Text(
                     'Get Started',
                     style: TextStyle(
                       fontSize: 18,
@@ -96,17 +92,16 @@ class FirstPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 5), // Space between the button and circles
+                const SizedBox(height: 5), 
 
-                // Indicator dots
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
                       width: 12,
                       height: 12,
-                      margin: EdgeInsets.symmetric(horizontal: 5),
-                      decoration: BoxDecoration(
+                      margin: const EdgeInsets.symmetric(horizontal: 5),
+                      decoration: const BoxDecoration(
                         color: Colors.grey,
                         shape: BoxShape.circle,
                       ),
@@ -114,7 +109,7 @@ class FirstPage extends StatelessWidget {
                     Container(
                       width: 12,
                       height: 12,
-                      margin: EdgeInsets.symmetric(horizontal: 5),
+                      margin: const EdgeInsets.symmetric(horizontal: 5),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         shape: BoxShape.circle,
@@ -133,7 +128,7 @@ class FirstPage extends StatelessWidget {
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: FirstPage(),
   ));

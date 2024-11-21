@@ -2,48 +2,49 @@ import 'package:flutter/material.dart';
 import 'package:tourpulse/favorites.dart';
 import 'package:tourpulse/popular_destination.dart';
 import 'package:tourpulse/explore.dart';
-import 'package:tourpulse/category.dart'; // Import your Category page
-import 'package:tourpulse/profile.dart'; // Import your Profile page
-import 'package:tourpulse/tajmahal.dart'; // Import Taj Mahal page
-import 'package:tourpulse/india.dart'; // Import India page
-import 'package:tourpulse/bali.dart'; // Import Bali page
-import 'package:tourpulse/usa.dart'; // Import USA page
+import 'package:tourpulse/category.dart'; 
+import 'package:tourpulse/profile.dart'; 
+import 'package:tourpulse/tajmahal.dart'; 
+import 'package:tourpulse/india.dart'; 
+import 'package:tourpulse/bali.dart'; 
+import 'package:tourpulse/usa.dart'; 
 
 class Home extends StatelessWidget {
+  const Home({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'HOME',
           style: TextStyle(
-            fontSize: 24, // Increased font size
-            fontWeight: FontWeight.bold, // Make text bold
+            fontSize: 24, 
+            fontWeight: FontWeight.bold,
           ),
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0), // Padding around the icon
-            child: Container(
-              width: 30, // Increase width
-              height: 30, // Increase height
+            padding: const EdgeInsets.symmetric(horizontal: 16.0), 
+            child: SizedBox(
+              width: 30,
+              height: 30, 
               child: IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.person,
-                  size: 30, // Increase icon size
+                  size: 30, 
                 ),
                 onPressed: () {
-                  // Navigate to Profile page
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Profile()), // Replace with your Profile widget
+                    MaterialPageRoute(builder: (context) => const Profile()), // Replace with your Profile widget
                   );
                 },
               ),
             ),
           ),
         ],
-        backgroundColor: Colors.grey[100], // Match with page background color
+        backgroundColor: Colors.grey[100], 
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -59,13 +60,13 @@ class Home extends StatelessWidget {
                       color: Colors.grey.withOpacity(0.5), // Shadow color
                       spreadRadius: 2,
                       blurRadius: 5,
-                      offset: Offset(0, 3), // Changes position of shadow
+                      offset: const Offset(0, 3), // Changes position of shadow
                     ),
                   ],
                 ),
                 child: TextField(
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.search),
+                    prefixIcon: const Icon(Icons.search),
                     hintText: 'Search',
                     filled: true,
                     fillColor: Colors.lightBlueAccent[100], // Keep the same background color
@@ -77,19 +78,18 @@ class Home extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             _buildPopularDestinationsRow(context),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
-              child: GestureDetector( // Wrap in GestureDetector
+              child: GestureDetector( 
                 onTap: () {
-                  // Navigate to Popular Destinations page
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => PopularDestinations()), // Replace with your Popular Destinations widget
+                    MaterialPageRoute(builder: (context) => const PopularDestinations()), // Replace with your Popular Destinations widget
                   );
                 },
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -102,32 +102,30 @@ class Home extends StatelessWidget {
               ),
             ),
             _buildImageWithText('Taj Mahal', 'India', 'assets/tajmahal.jpg', height: 150, onTap: () {
-              // Navigate to Taj Mahal page
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => TajMahal()), // Replace with your Taj Mahal widget
+                MaterialPageRoute(builder: (context) => const TajMahal()), // Replace with your Taj Mahal widget
               );
-            }), // Reduced height
-            SizedBox(height: 5), // Reduced distance between Taj Mahal and India
+            }), 
+            const SizedBox(height: 5), 
             _buildImageWithText('Ubud', 'Bali', 'assets/ubud.jpg', height: 150, onTap: () {
               // Navigate to Bali page
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Bali()), // Replace with your Bali widget
+                MaterialPageRoute(builder: (context) => const Bali()), // Replace with your Bali widget
               );
-            }), // Reduced height
-            SizedBox(height: 20), // Keep this distance for other elements
+            }), 
+            const SizedBox(height: 20), 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
               child: GestureDetector( // Wrap in GestureDetector
                 onTap: () {
-                  // Navigate to Explore page
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Explore()), // Replace with your Explore widget
+                    MaterialPageRoute(builder: (context) => const Explore()), // Replace with your Explore widget
                   );
                 },
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -147,8 +145,8 @@ class Home extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.blueGrey,
-        backgroundColor: Colors.grey[100], // Match with page background color
-        items: [
+        backgroundColor: Colors.grey[100],
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home, size: 30), // Increased icon size
             label: 'Home',
@@ -166,7 +164,7 @@ class Home extends StatelessWidget {
             label: 'Profile',
           ),
         ],
-        selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16), // Make Home text bold and increase font size
+        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16), // Make Home text bold and increase font size
         onTap: (index) {
           switch (index) {
             case 0:
@@ -176,21 +174,21 @@ class Home extends StatelessWidget {
               // Navigate to Category page
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Category()), // Replace with your Category widget
+                MaterialPageRoute(builder: (context) => const Category()), // Replace with your Category widget
               );
               break;
             case 2:
               // Navigate to Favorite page
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Favorites()), // Replace with your Favorite widget
+                MaterialPageRoute(builder: (context) => const Favorites()), // Replace with your Favorite widget
               );
               break;
             case 3:
               // Navigate to Profile page
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Profile()), // Replace with your Profile widget
+                MaterialPageRoute(builder: (context) => const Profile()), // Replace with your Profile widget
               );
               break;
           }
@@ -208,21 +206,21 @@ class Home extends StatelessWidget {
             // Navigate to India page
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => India()), // Replace with your India widget
+              MaterialPageRoute(builder: (context) => const India()), // Replace with your India widget
             );
           }),
           _buildRoundedSquareImage('assets/canggu.jpg', 'Bali', () {
             // Navigate to Bali page
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Bali()), // Replace with your Bali widget
+              MaterialPageRoute(builder: (context) => const Bali()), // Replace with your Bali widget
             );
           }),
           _buildRoundedSquareImage('assets/miami.jpg', 'USA', () {
             // Navigate to USA page
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => USA()), // Replace with your USA widget
+              MaterialPageRoute(builder: (context) => const USA()), // Replace with your USA widget
             );
           }),
           _buildRoundedSquareImage('assets/las vegas.jpg', 'Italy', () {
@@ -252,8 +250,8 @@ class Home extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(height: 5),
-            Text(label, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)), // Bold text for labels
+            const SizedBox(height: 5),
+            Text(label, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)), // Bold text for labels
           ],
         ),
       ),
@@ -289,12 +287,12 @@ class Home extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     title,
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Padding(
@@ -349,7 +347,7 @@ class Home extends StatelessWidget {
           child: Center(
             child: Text(
               label,
-              style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+              style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ),
         ),

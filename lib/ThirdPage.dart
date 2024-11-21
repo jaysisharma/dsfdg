@@ -3,22 +3,22 @@ import 'package:tourpulse/Login.dart';
 import 'package:tourpulse/Signup.dart';
 
 class ThirdPage extends StatelessWidget {
+  const ThirdPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          // Background image container filling 60% of the screen
           Container(
-            height: MediaQuery.of(context).size.height * 0.6, // Set to 60% height
-            decoration: BoxDecoration(
+            height: MediaQuery.of(context).size.height * 0.6, 
+            decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/abc.jpg'), // Your image asset
-                fit: BoxFit.cover, // Ensure image covers the area
+                image: AssetImage('assets/abc.jpg'), 
+                fit: BoxFit.cover, 
               ),
             ),
           ),
-          // Positioned Back Button and Title on the top left corner
           Positioned(
             top: 40,
             left: 10,
@@ -26,14 +26,14 @@ class ThirdPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 IconButton(
-                  icon: Icon(Icons.arrow_back),
+                  icon: const Icon(Icons.arrow_back),
                   color: Colors.black,
                   onPressed: () {
                     Navigator.pop(context); // Navigate back to the previous page
                   },
                 ),
-                SizedBox(width: 5),
-                Text(
+                const SizedBox(width: 5),
+                const Text(
                   'TourPulse',
                   style: TextStyle(
                     fontSize: 18,
@@ -44,7 +44,6 @@ class ThirdPage extends StatelessWidget {
               ],
             ),
           ),
-          // Bottom section with buttons positioned at the bottom
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
@@ -52,7 +51,7 @@ class ThirdPage extends StatelessWidget {
               width: MediaQuery.of(context).size.width, // Full width
               decoration: BoxDecoration(
                 color: Colors.blueGrey[400], // Background color for the bottom part
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(60),
                   topRight: Radius.circular(60),
                 ),
@@ -60,25 +59,23 @@ class ThirdPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Login Button
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 40.0),
                     child: ElevatedButton(
                       onPressed: () {
-                        // Navigate to login page
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Login()), // Ensure this matches your actual Login class
+                          MaterialPageRoute(builder: (context) => const LoginApp()), // Ensure this matches your actual Login class
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(vertical: 15),
+                        padding: const EdgeInsets.symmetric(vertical: 15),
                         backgroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           'Login',
                           style: TextStyle(
@@ -90,7 +87,7 @@ class ThirdPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   // Create an account button
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 40.0),
@@ -99,17 +96,17 @@ class ThirdPage extends StatelessWidget {
                         // Navigate to signup page
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => SignUp()), // Ensure this matches your actual Signup class
+                          MaterialPageRoute(builder: (context) => const SignUpPage()), // Ensure this matches your actual Signup class
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(vertical: 15),
+                        padding: const EdgeInsets.symmetric(vertical: 15),
                         backgroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           'Create an account',
                           style: TextStyle(
@@ -132,7 +129,7 @@ class ThirdPage extends StatelessWidget {
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: ThirdPage(),
   ));
